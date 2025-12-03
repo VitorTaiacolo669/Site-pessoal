@@ -1,0 +1,219 @@
+/* ===========================
+   Variáveis de Cores (Tema Roxo)
+=========================== */
+:root {
+  --bg: #f8f7fb;
+  --surface: #ffffff;
+  --text: #1e1b2e;
+  --muted: #6b6685;
+  --brand: #7b2ff7;
+  --brand-light: #b983ff;
+  --border: #e3d9f3;
+  --shadow: rgba(123, 47, 247, 0.15);
+}
+
+/* ===========================
+   Configuração Global
+=========================== */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ===========================
+   Cabeçalho + Navegação
+=========================== */
+header.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 6px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: 1rem 0;
+}
+
+.brand__logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-light));
+  box-shadow: 0 0 10px var(--brand-light);
+}
+
+.brand__title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--brand);
+}
+
+nav.primary-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1rem;
+  padding: .75rem 0 1rem;
+}
+
+nav.primary-nav a {
+  text-decoration: none;
+  color: var(--brand);
+  padding: .4rem .8rem;
+  border-radius: 6px;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+nav.primary-nav a:hover,
+nav.primary-nav a:focus {
+  background: var(--brand-light);
+  color: white;
+  box-shadow: 0 0 10px var(--brand-light);
+}
+
+/* ===========================
+   Conteúdo Principal
+=========================== */
+main h1 {
+  margin: 1.5rem 0 .75rem;
+  font-size: 2rem;
+  color: var(--brand);
+  text-shadow: 0 0 6px var(--brand-light);
+}
+
+main p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* ===========================
+   Cards / Trabalhos
+=========================== */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 8px var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px var(--shadow);
+}
+
+.card h2 {
+  color: var(--brand);
+  margin-top: 0;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+/* ===========================
+   Imagens com Legenda
+=========================== */
+figure {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .75rem;
+  margin: 1.25rem 0;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+figcaption {
+  color: var(--muted);
+  font-size: .95rem;
+  margin-top: .5rem;
+  text-align: center;
+}
+
+/* ===========================
+   Formulário / Votação
+=========================== */
+form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+form label {
+  display: block;
+  margin-top: .75rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: .5rem;
+  margin-top: .25rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+form button {
+  background: var(--brand);
+  color: white;
+  border: none;
+  padding: .6rem 1.2rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: var(--brand-light);
+  box-shadow: 0 0 12px var(--brand-light);
+}
+
+/* ===========================
+   Rodapé
+=========================== */
+footer.site-footer {
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+  padding: 1rem 0;
+  color: var(--muted);
+  background: var(--surface);
+  text-align: center;
+  font-size: 0.9rem;
+}

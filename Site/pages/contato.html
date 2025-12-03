@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato Pessoal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+<div class="container brand">
+<span class="brand__logo" aria-hidden="true"></span>
+<span class="brand__title">Site Pessoal</span>
+</div>
+
+<nav class="container primary-nav">
+    <a href="index.html">Início</a>
+    <a href="linguagens.html">Linguagens</a>
+    <a href="ciencias_natureza.html">Ciências da Natureza</a>
+    <a href="matematica.html">Matemática</a>
+    <a href="ciencias_humanas.html">Ciências Humanas</a>
+    <a href="tecnico.html">Técnico/Profissionalizante</a>
+    <a href="contato.html">Contato & Votação</a>
+</nav>
+
+<section>
+  <h2> Formulário de Contato</h2>
+  <form id="form-contato" onsubmit="enviarFormulario(event, 'contato')">
+    <input type="text" name="nome" placeholder="Seu nome" required><br><br>
+    <input type="email" name="email" placeholder="Seu e-mail" required><br><br>
+    <textarea name="mensagem" rows="5" placeholder="Digite sua mensagem" required></textarea><br><br>
+    <input type="submit" value="Enviar Mensagem">
+  </form>
+  <p id="msg-contato" style="color:lime; font-weight:bold; display:none;">Obrigado pela colaboração!</p>
+</section>
+
+<section>
+  <h2> Votação - Escolha o Melhor Trabalho</h2>
+  <form id="form-votacao" onsubmit="enviarFormulario(event, 'votacao')">
+    <select name="trabalho" required>
+      <option value="">Selecione um trabalho</option>
+      <option value="E-commerce Social">E-commerce Social</option>
+      <option value="Urna Eleitoral com ESP32">Urna Eleitoral</option>
+      <option value="Mini garagem com sensor de presença">Mini Garagem</option>
+      <option value="Bebedouro Automático com sensor">Bebedouro Automática</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Votar">
+  </form>
+  <p id="msg-votacao" style="color:lime; font-weight:bold; display:none;">Obrigado pela colaboração!</p>
+</section>
+
+<footer>© 2025 Vitor A. B. Taiacolo | Contato e Votação</footer>
+
+<script>
+function enviarFormulario(event, tipo) {
+    event.preventDefault(); // impede envio real
+
+    // mostra mensagem correspondente
+    document.getElementById("msg-" + tipo).style.display = "block";
+
+    // desativa o formulário para impedir novo envio
+    const form = document.getElementById("form-" + tipo);
+    const elementos = form.querySelectorAll("input, select, textarea, button");
+
+    elementos.forEach(el => el.disabled = true);
+}
+</script>
+
+</body>
+</html>

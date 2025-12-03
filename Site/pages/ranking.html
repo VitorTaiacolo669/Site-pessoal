@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raking do mais votados</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+<div class="container brand">
+<span class="brand__logo" aria-hidden="true"></span>
+<span class="brand__title">Site Pessoal</span>
+</div>
+    <a href="/">Início</a>
+    <a href="/contato">Voltar ao Formulário</a>
+  </nav>
+
+  <section>
+    <h2>Resultados da Votação</h2>
+    {% if resultados %}
+      <ul style="list-style:none; padding:0;">
+        {% for trabalho, votos in resultados %}
+          <li style="margin:10px 0; font-size:1.2em;">
+            <strong>{{ trabalho }}</strong>: {{ votos }} voto(s)
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Ainda não há votos registrados.</p>
+    {% endif %}
+  </section>
+
+  <footer>© 2025 Seu Nome | Ranking</footer>
+</body>
+</html>

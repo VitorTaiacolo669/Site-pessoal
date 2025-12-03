@@ -1,0 +1,546 @@
+/* ===========================
+
+   🌙 Tema Escuro Moderno
+
+=========================== */
+
+:root {
+
+  --bg: #000000;
+
+  --surface: #111111;
+
+  --text: #ffffff;
+
+  --muted: #bbbbbb;
+
+  --brand: #7b2ff7;
+
+  --brand-light: #b983ff;
+
+  --border: #333333;
+
+  --shadow: rgba(183, 132, 255, 0.3);
+
+}
+ 
+/* ===========================
+
+   ⚙️ Configuração Global
+
+=========================== */
+
+* {
+
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+
+}
+ 
+body {
+
+  margin: 0;
+
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+
+  color: var(--text);
+
+  background: var(--bg);
+
+  line-height: 1.6;
+
+  animation: fadeIn 0.6s ease-in;
+
+}
+ 
+.container {
+
+  width: min(100%, 960px);
+
+  margin: 0 auto;
+
+  padding: 1rem;
+
+}
+ 
+/* ===========================
+
+   🧭 Cabeçalho + Navegação
+
+=========================== */
+
+.site-header {
+
+  background: var(--surface);
+
+  border-bottom: 1px solid var(--border);
+
+  box-shadow: 0 2px 6px var(--shadow);
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 10;
+
+}
+ 
+.brand {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: .75rem;
+
+  padding: 1rem 0;
+
+  justify-content: center;
+
+}
+ 
+.brand__logo {
+
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, var(--brand), var(--brand-light));
+
+  box-shadow: 0 0 15px var(--brand-light);
+
+}
+ 
+.brand__title {
+
+  font-weight: 700;
+
+  font-size: 1.3rem;
+
+  color: var(--brand-light);
+
+  text-shadow: 0 0 8px var(--brand);
+
+}
+ 
+.primary-nav {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: .75rem 1rem;
+
+  padding: .75rem 0 1rem;
+
+}
+ 
+.primary-nav a {
+
+  text-decoration: none;
+
+  color: var(--brand-light);
+
+  padding: .5rem 1rem;
+
+  border-radius: 6px;
+
+  transition: 0.25s;
+
+  font-weight: 500;
+
+}
+ 
+.primary-nav a:hover,
+
+.primary-nav a:focus {
+
+  background: var(--brand);
+
+  color: white;
+
+  box-shadow: 0 0 10px var(--brand-light);
+
+}
+ 
+.primary-nav a.active {
+
+  background: var(--brand);
+
+  color: white;
+
+  box-shadow: 0 0 12px var(--brand-light);
+
+}
+ 
+/* ===========================
+
+   📸 Foto e Conteúdo Principal
+
+=========================== */
+
+main {
+
+  text-align: center;
+
+  margin-top: 2rem;
+
+}
+ 
+.profile-pic {
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  box-shadow: 0 0 25px var(--brand-light);
+
+  margin-bottom: 1.5rem;
+
+}
+ 
+main h1 {
+
+  font-size: 2rem;
+
+  color: var(--brand-light);
+
+  text-shadow: 0 0 8px var(--brand);
+
+}
+ 
+main p {
+
+  color: var(--muted);
+
+  font-size: 1.1rem;
+
+  max-width: 700px;
+
+  margin: 0 auto 2rem;
+
+}
+ 
+/* ===========================
+
+   💎 Cards de Projetos
+
+=========================== */
+
+.card {
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 12px var(--shadow);
+
+  padding: 1.5rem;
+
+  margin: 1.5rem auto;
+
+  max-width: 700px;
+
+  transition: transform 0.2s, box-shadow 0.3s;
+
+}
+ 
+.card:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow: 0 6px 18px var(--shadow);
+
+}
+ 
+.card h3 {
+
+  color: var(--brand);
+
+  margin-bottom: .5rem;
+
+}
+ 
+.card p {
+
+  color: var(--muted);
+
+  margin-bottom: 1rem;
+
+}
+ 
+/* ===========================
+
+   🔘 Botões
+
+=========================== */
+
+.btn {
+
+  display: inline-block;
+
+  background: var(--brand);
+
+  color: #fff;
+
+  text-decoration: none;
+
+  padding: .6rem 1.2rem;
+
+  border-radius: 8px;
+
+  transition: background 0.25s, transform 0.2s;
+
+  font-weight: 600;
+
+}
+ 
+.btn:hover {
+
+  background: var(--brand-light);
+
+  transform: scale(1.05);
+
+  box-shadow: 0 0 10px var(--brand-light);
+
+}
+ 
+/* ===========================
+
+   👣 Rodapé
+
+=========================== */
+
+.site-footer {
+
+  margin-top: 3rem;
+
+  border-top: 1px solid var(--border);
+
+  padding: 1.5rem 0;
+
+  color: var(--muted);
+
+  background: var(--surface);
+
+  text-align: center;
+
+  font-size: 0.9rem;
+
+}
+ 
+/* ===========================
+
+   ✨ Animações
+
+=========================== */
+
+@keyframes fadeIn {
+
+  from { opacity: 0; transform: translateY(10px); }
+
+  to { opacity: 1; transform: translateY(0); }
+
+}
+ 
+/* ===========================
+
+   🌿 Ciências da Natureza
+
+=========================== */
+ 
+.natureza {
+
+  text-align: center;
+
+  margin-top: 2rem;
+
+}
+ 
+.natureza h2 {
+
+  color: var(--brand-light);
+
+  font-size: 2rem;
+
+  text-shadow: 0 0 8px var(--brand);
+
+  margin-bottom: 1rem;
+
+}
+ 
+.natureza p {
+
+  color: var(--muted);
+
+  max-width: 700px;
+
+  margin: 0 auto 2rem;
+
+  font-size: 1.1rem;
+
+}
+ 
+.natureza-cards {
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 2rem;
+
+}
+ 
+/* Cada card vertical */
+
+.nature-card {
+
+  background: var(--surface);
+
+  color: var(--text);
+
+  width: 250px;
+
+  min-height: 380px;
+
+  border: 2px solid var(--border);
+
+  border-radius: 16px;
+
+  box-shadow: 0 0 15px var(--shadow);
+
+  padding: 1.5rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  transition: transform 0.3s, box-shadow 0.3s;
+
+}
+ 
+.nature-card h3 {
+
+  font-size: 1.4rem;
+
+  margin-bottom: 1rem;
+
+  text-shadow: 0 0 5px var(--brand-light);
+
+}
+ 
+.nature-card p {
+
+  color: var(--muted);
+
+  margin-bottom: 1.5rem;
+
+  font-size: 1rem;
+
+}
+ 
+.nature-card:hover {
+
+  transform: translateY(-8px);
+
+  box-shadow: 0 0 25px var(--brand-light);
+
+}
+ 
+/* Cores específicas para cada matéria */
+
+.nature-card.bio {
+
+  border-left: 6px solid #32cd32;
+
+  box-shadow: 0 0 15px rgba(50, 205, 50, 0.3);
+
+}
+ 
+.nature-card.quim {
+
+  border-left: 6px solid #ff4fc9;
+
+  box-shadow: 0 0 15px rgba(255, 79, 201, 0.3);
+
+}
+ 
+.nature-card.fis {
+
+  border-left: 6px solid #00bfff;
+
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+
+}
+ 
+/* ===========================
+
+   📱 Responsividade
+
+=========================== */
+
+@media (max-width: 800px) {
+
+  .brand__title {
+
+    font-size: 1.1rem;
+
+  }
+ 
+  .primary-nav {
+
+    flex-direction: column;
+
+    gap: .5rem;
+
+  }
+ 
+  .profile-pic {
+
+    width: 180px;
+
+    height: 180px;
+
+  }
+ 
+  .natureza-cards {
+
+    flex-direction: column;
+
+    align-items: center;
+
+  }
+ 
+  .nature-card {
+
+    width: 90%;
+
+    min-height: auto;
+
+  }
+
+.section-image {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.section-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px var(--shadow);
+}
+
+ 
